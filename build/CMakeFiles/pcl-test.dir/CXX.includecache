@@ -25,6 +25,26 @@ iterator
 -
 random
 -
+boost/random.hpp
+-
+boost/random/normal_distribution.hpp
+-
+boost/thread/thread.hpp
+-
+boost/lexical_cast.hpp
+-
+boost/make_shared.hpp
+-
+boost/date_time/gregorian/gregorian_types.hpp
+-
+boost/date_time/posix_time/posix_time.hpp
+-
+boost/date_time/posix_time/posix_time_types.hpp
+-
+boost/thread/thread.hpp
+-
+math.h
+-
 
 /usr/include/eigen3/Eigen/Cholesky
 Core
