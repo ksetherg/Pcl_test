@@ -13,6 +13,18 @@ pcl/io/pcd_io.h
 -
 pcl/point_types.h
 -
+pcl/point_cloud.h
+-
+pcl/common/io.h
+-
+pcl/common/copy_point.h
+-
+vector
+-
+iterator
+-
+random
+-
 
 /usr/include/eigen3/Eigen/Cholesky
 Core
