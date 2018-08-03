@@ -153,7 +153,7 @@ compute_metric_mean(pcl::PointCloud<pcl::PointXYZ> &cloud)
 int
 main()
 {
-    int w = 3;
+    int w = 10;
     int h = 1;
     float mean = 0; //матожидание
     float disp = 1; //дисперсия
@@ -170,9 +170,9 @@ main()
               << " "    << cloud->points[i].z << std::endl;
 
     //добавляем к нему шум 
-    //add_gaussian_noise(*cloud, mean, disp);
+    add_gaussian_noise(*cloud, mean, disp);
     //загружаем в clous_mod новое зашумленное облако
-    
+
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_mod (new pcl::PointCloud<pcl::PointXYZ>);
     if (!load_cloud ("noized_cloud.pcd", *cloud_mod))
         return (-1);
@@ -188,7 +188,7 @@ main()
     double mean_m;
     abs_m = compute_metric_abs(*cloud_mod) - compute_metric_abs(*cloud);
     mean_m = compute_metric_mean(*cloud_mod) - compute_metric_mean(*cloud);
-    std::cout << "абсалютная разница: " << abs_m 
+    std::cout << "абсолютная разница: " << abs_m 
               << std::endl
               << "средняя разница: " << mean_m
               <<std::endl;
