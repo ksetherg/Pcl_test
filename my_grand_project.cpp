@@ -156,7 +156,7 @@ main()
     int w = 10;
     int h = 1;
     float mean = 0; //матожидание
-    float disp = 1; //дисперсия
+    float disp = 0.1; //дисперсия
     //create_cloud(w, h); //создаем облако точек с необходимым количесвтом точек и структурой
 
     //загружаем в cloud наше исходное облако
@@ -186,8 +186,8 @@ main()
     //считаем и выводим метрику
     double abs_m;
     double mean_m;
-    abs_m = compute_metric_abs(*cloud_mod) - compute_metric_abs(*cloud);
-    mean_m = compute_metric_mean(*cloud_mod) - compute_metric_mean(*cloud);
+    abs_m = abs(compute_metric_abs(*cloud_mod) - compute_metric_abs(*cloud));
+    mean_m = abs(compute_metric_mean(*cloud_mod) - compute_metric_mean(*cloud));
     std::cout << "абсолютная разница: " << abs_m 
               << std::endl
               << "средняя разница: " << mean_m
