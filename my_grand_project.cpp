@@ -170,12 +170,12 @@ main(int argc, char **argv)
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
     if (!load_cloud (argv[1], *cloud))
         return (-1);
-
+    /*
     for (size_t i = 0; i < cloud->points.size (); ++i)
         std::cout << "    " << cloud->points[i].x
                   << " "    << cloud->points[i].y
                   << " "    << cloud->points[i].z << std::endl;
-
+    */
     //добавляем к облаку шум 
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_mod (new pcl::PointCloud<pcl::PointXYZ>);
     add_gaussian_noise(*cloud, *cloud_mod, mean, disp);
